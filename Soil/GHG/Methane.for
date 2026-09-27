@@ -51,9 +51,9 @@ C=======================================================================
 !     Reference height for the Arah model to be the top of the bund
       REAL, PARAMETER :: RefHeight = 100. ! mm
       !1/d EHFMS changed, before was 0.06
-      REAL, PARAMETER :: BufferRegenRate = 0.060
+      REAL, PARAMETER :: BufferRegenRate = 0.040
       !EHFMS created this parameter 
-      REAL, PARAMETER :: frac_afpmax = 0.40
+      REAL, PARAMETER :: frac_afpmax = 0.50
       DYNAMIC = CONTROL % DYNAMIC
       DLAYR = SOILPROP % DLAYR
       DLL   = SOILPROP % LL
