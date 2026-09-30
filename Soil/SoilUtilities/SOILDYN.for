@@ -569,7 +569,7 @@ C     Initialize curve number (according to J.T. Ritchie) 1-JUL-97 BDB
         ENDIF
 
         IF (SAEA(L) .LT. 0.0) THEN
-          SAEA(L) = 26.5
+          SAEA(L) = 22
           Length = LEN(TRIM(MSG(3)))
           IF (Length < 2) THEN
             MSG(3) = '   SAEA'
