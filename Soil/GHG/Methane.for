@@ -231,7 +231,10 @@ C-----------------------------------------------------------------------
       rbuff = rCO2  
       ENDIF
       Buffer(i,1) = Buffer(i,1) - rbuff       ! oxidized buffer pool
-      Buffer(i,2) = Buffer(i,2) + rbuff       ! reduced buffer pool                       
+      Buffer(i,2) = Buffer(i,2) + rbuff       ! reduced buffer pool 
+      WRITE(*,*) 'DAS=',CONTROL% DAS,' LAYER=',i,
+     & ' SAEA=',buffconc,' CSub=',CSubstrate(i),
+     & ' rCH4=',rCH4
 
 !       Total CH4 substrate (kgC/ha)
         TCH4Substrate = TCH4Substrate + rCH4  
