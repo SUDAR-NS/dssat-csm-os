@@ -233,9 +233,11 @@ C-----------------------------------------------------------------------
       Buffer(i,1) = Buffer(i,1) - rbuff       ! oxidized buffer pool
       Buffer(i,2) = Buffer(i,2) + rbuff       ! reduced buffer pool 
       WRITE(*,*) 'DAS=',CONTROL%DAS,' LAYER=',i,
-     & ' BUFF=',buffconc,' AFP=',afp(i),
-     & ' AFPmax=',afpmax,' CSub=',CSubstrate(i),
-     & ' rCH4=',rCH4
+     & ' BUFFCONC=',buffconc,
+     & ' BUFFPOOL=',Buffer(i,1),
+     & ' CSub=',CSubstrate(i),
+     & ' rCH4=',rCH4,' rCO2=',rCO2,
+     & ' rbuff=',rbuff
 
 !       Total CH4 substrate (kgC/ha)
         TCH4Substrate = TCH4Substrate + rCH4  
