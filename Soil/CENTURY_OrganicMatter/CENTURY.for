@@ -734,6 +734,15 @@
         ENDIF   
       ENDDO
 
+      IF (CONTROL%DAS.GE.80 .AND. CONTROL%DAS.LE.125) THEN
+        WRITE(*,*) 'DAS=',CONTROL%DAS,
+     &   ' CO2FMET0=',CO2FMET(SRFC),
+     &   ' CO2FSTR0L=',CO2FSTR(SRFC,LIG),
+     &   ' CO2FSTR0N=',CO2FSTR(SRFC,NONLIG),
+     &   ' CO2FS1_0=',CO2FS1(SRFC),
+     &   ' newCO2_0=',newCO2(SRFC)
+      ENDIF
+
       CALL MethaneDynamics(CONTROL, ISWITCH, SOILPROP,        !Input
      &    FERTDATA, FLOODWAT, SW, RLV, newCO2, DRAIN,         !Input
      &    CH4_data)                                           !Output
