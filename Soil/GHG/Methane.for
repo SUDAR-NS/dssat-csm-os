@@ -172,10 +172,8 @@ C-----------------------------------------------------------------------
       ENDDO
 
       IF (CONTROL%DAS.GE.80 .AND. CONTROL%DAS.LE.125) THEN
-        WRITE(*,*) 'DAS=',CONTROL%DAS, &
-             ' newCO2(0)=',newCO2(0), &
-             ' newCO2(1)=',newCO2(1), &
-             ' CSub1=',CSubstrate(1)
+       WRITE(*,*) 'DAS=',CONTROL%DAS,' newCO2(0)=',newCO2(0),
+     & ' newCO2(1)=',newCO2(1),' CSub1=',CSubstrate(1)
       ENDIF
 
       FLOOD = FLOODWAT % FLOOD
