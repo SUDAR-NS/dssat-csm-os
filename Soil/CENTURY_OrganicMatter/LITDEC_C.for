@@ -148,14 +148,11 @@
 
         IF (TCFLOW > METABC(SRFC)) TCFLOW = METABC(SRFC)
         
-        IF (CONTROL%DAS.GE.95 .AND. CONTROL%DAS.LE.125) THEN
-        WRITE(*,*) 'DAS=',CONTROL%DAS,
-     &   ' METABC=',METABC(SRFC),
+                WRITE(*,*) 'METABC=',METABC(SRFC),
      &   ' DEFAC=',DEFAC(SRFC),
      &   ' CULMET=',CULMET(SRFC),
      &   ' DECMET=',DECMET(SRFC),
      &   ' TCFLOW=',TCFLOW
-        ENDIF
 !       Calculate the CO2 respiration associated with the C flow
 !       from surface metabolic residue to surface SOM1.
         CO2FMET(SRFC) = TCFLOW * CO2MET(SRFC)
