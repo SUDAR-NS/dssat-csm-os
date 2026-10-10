@@ -147,7 +147,15 @@
         TCFLOW = METABC(SRFC) * DEFAC(SRFC) * CULMET(SRFC) *DECMET(SRFC)
 
         IF (TCFLOW > METABC(SRFC)) TCFLOW = METABC(SRFC)
-
+        
+        IF (CONTROL%DAS.GE.95 .AND. CONTROL%DAS.LE.125) THEN
+        WRITE(*,*) 'DAS=',CONTROL%DAS,
+     &   ' METABC=',METABC(SRFC),
+     &   ' DEFAC=',DEFAC(SRFC),
+     &   ' CULMET=',CULMET(SRFC),
+     &   ' DECMET=',DECMET(SRFC),
+     &   ' TCFLOW=',TCFLOW
+        ENDIF
 !       Calculate the CO2 respiration associated with the C flow
 !       from surface metabolic residue to surface SOM1.
         CO2FMET(SRFC) = TCFLOW * CO2MET(SRFC)
@@ -487,9 +495,9 @@
 ! CFSTRS1               C flow from the structural pool to SOM1 (kg[C] / ha)
 ! CFSTRS2               C flow from the structural pool to SOM2 (kg[C] / ha)
 ! CO2FMET               CO2 flow that accompanies the C flow out of the metabolic pool
-!                         (kg[C] / ha)
+!                         (kg[C]Â /Â ha)
 ! CO2FSTR               CO2 flow that accompanies the C flow out of the structural pool
-!                         (kg[C] / ha)
+!                         (kg[C]Â /Â ha)
 ! CO2MET(SOIL/SRFC)     C fraction lost to CO2 respiration when soil or surface metabolic
 !                         residue decomposes to soil or surface SOM1 (units?)
 ! CO2STR(SOIL/SRFC)     C fraction lost to CO2 when soil or surface structural non-lignin
@@ -515,11 +523,11 @@
 !                         functions as a multiplier on the maximum decomposition rate
 !                         (DECMET, DECSTR, DECS1, DECS2, DECS3) (range 0-1) (-)
 ! EFMETS1               E flow from soil or soil or surface metabolic residue to soil
-!                         or surface SOM1 (kg[E] / ha)
+!                         or surface SOM1 (kg[E]Â /Â ha)
 ! EFSTRS1               E flow from soil or surface structural residue to soil or
-!                         surface SOM1 (kg[E] / ha)
+!                         surface SOM1 (kg[E]Â /Â ha)
 ! EFSTRS2               E flow from soil or soil or surface structural residue to SOM2
-!                         (kg[E] / ha)
+!                         (kg[E]Â /Â ha)
 ! FREMET                E concentration (fraction) of decomposing metabolic residue
 !                         (kg[E] / kg[DM])
 ! FRESTR                E concentration (fraction) of decomposing structural residue
@@ -528,11 +536,11 @@
 !                         surface residue that was already in the system (kg[lignin] / kg[DM])
 ! IEL                   Element number. 1 = N; 2 = P; 3 = S (-)
 ! IMMMETS1              Immobilization of E during the flow from soil or surface metabolic
-!                         residue to soil or surface SOM1  (kg[E] / ha)
+!                         residue to soil or surface SOM1  (kg[E]Â /Â ha)
 ! IMMSTRS1              Immobilization of E during the flow from soil or surface structural
-!                         residue to soil or surface SOM1  (kg[E] / ha)
+!                         residue to soil or surface SOM1  (kg[E]Â /Â ha)
 ! IMMSTRS2              Immobilization of E during the flow from soil or surface structural
-!                         residue to SOM2  (kg[E] / ha)
+!                         residue to SOM2  (kg[E]Â /Â ha)
 ! LIG                   Array index indicating whether the variable refers to the lignin
 !                         component of the soil or surface structural residue pool or
 !                         the non-lignin component (see NONLIG). LIG = 1 (-)
@@ -541,11 +549,11 @@
 ! METABC                Soil or surface metabolic residue carbon content (kg[C] / ha)
 ! METABE                Soil or surface metabolic residue E content (kg[E] / ha)
 ! MNRMETS1              Mineralization of E during the flow from soil or surface metabolic
-!                         residue to soil or surface SOM1  (kg[E] / ha)
+!                         residue to soil or surface SOM1  (kg[E]Â /Â ha)
 ! MNRSTRS1              Mineralization of E during the flow from soil or surface structural
-!                         to soil or surface SOM1  (kg[E] / ha)
+!                         to soil or surface SOM1  (kg[E]Â /Â ha)
 ! MNRSTRS2              Mineralization of E during the flow from soil or surface structural
-!                         residue to SOM2  (kg[E] / ha)
+!                         residue to SOM2  (kg[E]Â /Â ha)
 ! NL                    Maximum number of soil layers used in the array definitions (-)
 ! NONLIG                Array index indicating whether the variable refers to the lignin
 !                         component of the soil or surface structural residue pool (see LIG)
